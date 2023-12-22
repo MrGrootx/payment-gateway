@@ -2,92 +2,91 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
     <title>Payment Gateway</title>
   </head>
   <body class="">
     <section class="container m-auto items-center mt-2 rounded-md">
-      <form action="#" autocomplete="off" class="md:m-36 m-6">
+      <form action="#" id="form" autocomplete="off" class="md:m-36 m-6">
         <div class="md:grid grid-cols-2 gap-3">
           <!-- Address-->
-          <div class="max-w-2xl p-3">
+          <div class=" p-3 md:border rounded">
             <h1 class="font-bold text-xl">BILLING ADDRESS</h1>
             <!-- name inputs-->
-            <div class="p-2 form-group">
+            <div class="form-group ">
               <label for="username" class="">Full Name</label>
               <input
                 type="text"
                 id="username"
                 placeholder="Enter name"
                 max="2"
-                required
+                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
             </div>
             <!-- email inputs-->
-            <div class="p-2 form-group">
+            <div class="form-group ">
               <label for="email" class="">Email</label>
               <input
                 type="email"
                 id="email"
                 placeholder="Enter email"
                 max="2"
-                required
+                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
             </div>
             <!-- address inputs-->
-            <div class="p-2 form-group">
+            <div class="form-group ">
               <label for="address" class="">Address</label>
               <input
                 type="text"
                 id="address"
                 placeholder="Enter address"
                 max="2"
-                required
+                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
             </div>
             <!-- city inputs-->
-            <div class="p-2 form-group">
+            <div class="form-group ">
               <label for="city" class="">City</label>
               <input
                 type="text"
                 id="city"
                 placeholder="Enter city"
                 max="2"
-                required
+                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
             </div>
             <!-- state inputs-->
-            <div class="p-2 form-group">
+            <div class="form-group ">
               <label for="state" class="">State</label>
               <input
                 type="text"
                 id="state"
                 placeholder="Enter state"
                 max="2"
-                required
+                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
             </div>
             <!-- zipcode inputs-->
-            <div class="p-2 form-group">
+            <div class="form-group  ">
               <label for="zipcode" class="">Zip Code</label>
               <input
                 type="number"
                 id="zipcode"
                 placeholder="Zip Code"
                 min="0"
-                required
+                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
@@ -95,7 +94,7 @@
           </div>
 
           <!-- paymanet 2-->
-          <div class="max-w-2xl p-3 mt-3 md:mt-0">
+          <div class="max-w-2xl p-3 mt-3 md:mt-0 md:border rounded">
             <h1 class="font-bold text-xl">PAYMENT</h1>
             <div>
               <div class="p-2">
@@ -128,50 +127,51 @@
                   </div>
 
                   <!-- Card Number inputs-->
-                  <div class="p-2 form-group ">
-                    <label for="Card" class="">Card Number</label>
+                  <div class="form-group ">
+                    <label for="cardnumber" class="">Card Number</label>
                     <input
                       type="Card"
-                      id="username"
+                      id="cardnumber"
                       placeholder="Enter card number"
                       min="0"
-                      required
+                      
                       class="border border-gray-300 px-1 py-2 outline-none w-full"
                     />
                     <p class="text-sm text-red-600">error message</p>
                   </div>
 
                   <!-- exp mth inputs-->
-                  <div class="p-2 form-group">
+                  <div class="form-group">
                     <label for="exp" class="">Expiration Date</label>
                     <input
                       type="number"
                       id="exp"
                       placeholder="MM / YY"
                       min="0"
-                      required
+                      
                       class="border border-gray-300 px-1 py-2 outline-none w-full"
                     />
                     <p class="text-sm text-red-600">error message</p>
                   </div>
                   <!-- CVC-->
-                  <div class="p-2 form-group">
+                  <div class="form-group">
                     <label for="CVC" class="">CVC</label>
                     <input
                       type="number"
                       id="CVC"
                       placeholder="cvc"
                       min="0"
-                      required
+                      
                       class="border border-gray-300 px-1 py-2 outline-none w-full"
                     />
                     <p class="text-sm text-red-600">error message</p>
                   </div>
 
                   <!-- Check Out-->
-                  <div class="p-2 text-center mt-5">
+                  <div class="text-center mt-5">
                     <button
-                      type="button"
+                      type="submit"
+                      id="submitbtn"
                       class="bg-indigo-600 w-full py-2 text-white font-bold hover:bg-indigo-700 transition-all duration-200"
                     >
                       Procced to CheckOut
@@ -185,4 +185,5 @@
       </form>
     </section>
   </body>
+  <script src="/public/js/main.js" defer></script>
 </html>
