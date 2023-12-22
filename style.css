@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.form-group.error input{
+  border-color: red;
+}
+.form-group.success input{
+  border-color: rgb(57, 255, 57);
+}
+
+.form-group p{
+  visibility: hidden;
+}
+
+.form-group.error p{
+  visibility: visible;
+}
