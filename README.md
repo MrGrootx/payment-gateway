@@ -24,6 +24,12 @@ Features
     Validation Feedback:
         Error messages elegantly guide users to correct any form input issues.
 
+How to run
+    
+    1. npm install
+    2. npm run dev
+
+
 How to Use
 
     Clone the repository to your local machine.

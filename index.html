@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Payment Gateway</title>
   </head>
   <body class="">
@@ -11,82 +15,77 @@
       <form action="#" id="form" autocomplete="off" class="md:m-36 m-6">
         <div class="md:grid grid-cols-2 gap-3">
           <!-- Address-->
-          <div class=" p-3 md:border rounded">
+          <div class="p-3 md:border rounded">
             <h1 class="font-bold text-xl">BILLING ADDRESS</h1>
             <!-- name inputs-->
-            <div class="form-group ">
+            <div class="form-group">
               <label for="username" class="">Full Name</label>
               <input
                 type="text"
                 id="username"
                 placeholder="Enter name"
                 max="2"
-                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
             </div>
             <!-- email inputs-->
-            <div class="form-group ">
+            <div class="form-group">
               <label for="email" class="">Email</label>
               <input
-                type="email"
+                type="text"
                 id="email"
                 placeholder="Enter email"
                 max="2"
-                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
             </div>
             <!-- address inputs-->
-            <div class="form-group ">
+            <div class="form-group">
               <label for="address" class="">Address</label>
               <input
                 type="text"
                 id="address"
                 placeholder="Enter address"
                 max="2"
-                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
             </div>
             <!-- city inputs-->
-            <div class="form-group ">
+            <div class="form-group">
               <label for="city" class="">City</label>
               <input
                 type="text"
                 id="city"
                 placeholder="Enter city"
                 max="2"
-                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
             </div>
             <!-- state inputs-->
-            <div class="form-group ">
+            <div class="form-group">
               <label for="state" class="">State</label>
               <input
                 type="text"
                 id="state"
                 placeholder="Enter state"
                 max="2"
-                
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
             </div>
             <!-- zipcode inputs-->
-            <div class="form-group  ">
+            <div class="form-group">
               <label for="zipcode" class="">Zip Code</label>
               <input
-                type="number"
+                type="text"
                 id="zipcode"
                 placeholder="Zip Code"
                 min="0"
-                
+                value="125464"
                 class="border border-gray-300 px-1 py-2 outline-none w-full"
               />
               <p class="text-sm text-red-600">error message</p>
@@ -127,15 +126,15 @@
                   </div>
 
                   <!-- Card Number inputs-->
-                  <div class="form-group ">
+                  <div class="form-group">
                     <label for="cardnumber" class="">Card Number</label>
                     <input
                       type="Card"
                       id="cardnumber"
                       placeholder="Enter card number"
                       min="0"
-                      
                       class="border border-gray-300 px-1 py-2 outline-none w-full"
+                      value="1234567890123456"
                     />
                     <p class="text-sm text-red-600">error message</p>
                   </div>
@@ -144,11 +143,10 @@
                   <div class="form-group">
                     <label for="exp" class="">Expiration Date</label>
                     <input
-                      type="number"
+                      type="date"
                       id="exp"
                       placeholder="MM / YY"
                       min="0"
-                      
                       class="border border-gray-300 px-1 py-2 outline-none w-full"
                     />
                     <p class="text-sm text-red-600">error message</p>
@@ -157,20 +155,19 @@
                   <div class="form-group">
                     <label for="CVC" class="">CVC</label>
                     <input
-                      type="number"
+                      type="text"
                       id="CVC"
                       placeholder="cvc"
                       min="0"
-                      
                       class="border border-gray-300 px-1 py-2 outline-none w-full"
+                      value="124"
                     />
                     <p class="text-sm text-red-600">error message</p>
                   </div>
 
                   <!-- Check Out-->
                   <div class="text-center mt-5">
-                    <button
-                      type="submit"
+                    <button 
                       id="submitbtn"
                       class="bg-indigo-600 w-full py-2 text-white font-bold hover:bg-indigo-700 transition-all duration-200"
                     >
@@ -183,6 +180,82 @@
           </div>
         </div>
       </form>
+
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden"
+        id="popupdiv"
+      >
+        <div class="flex justify-center items-center h-screen">
+          <div class="w-1/3 p-2 bg-cyan-700 text-white rounded ">
+            <h3 class="text-2xl font-semibold text-center uppercase ">
+              conformation
+            </h3>
+            <ul class="grid-rows-4 grid-flow-col place-content-center">
+              <div
+                class="mt-2 flex justify-between px-2 py-2 bg-cyan-600 rounded"
+              >
+                <label for="preusername" class="font-semibold">Name</label>
+                <li class="" id="preusername" class="border">Abishek</li>
+              </div>
+
+              <div
+                class="mt-2 flex justify-between px-2 py-2 bg-cyan-600 rounded"
+              >
+                <label for="precardnumber" class="font-semibold"
+                  >card Number</label
+                >
+                <li class="" id="precardnumber">123423423</li>
+              </div>
+
+              <div
+                class="mt-2 flex justify-between px-2 py-2 bg-cyan-600 rounded"
+              >
+                <label for="preexpiration" class="font-semibold"
+                  >Expiration Date</label
+                >
+                <li class="" id="preexpiration">11/25</li>
+              </div>
+
+              <div
+                class="mt-2 flex justify-between px-2 py-2 bg-cyan-600 rounded"
+              >
+                <label for="precvc" class="font-semibold">CVC</label>
+                <li class="" id="precvc">254</li>
+              </div>
+            </ul>
+
+            <div class="flex justify-between">
+              <button
+                type="button"
+                id="popupconfirmBtn"
+                class="px-2 py-1 mt-5 rounded bg-red-500 hover:bg-red-700 duration-200 text-white font-semibold"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                id="popupcloseBtn"
+                class="px-2 py-1 mt-5 rounded bg-yellow-300 hover:bg-yellow-500 duration-200 text-black"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </body>
   <script src="/public/js/main.js" defer></script>
