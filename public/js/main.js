@@ -11,6 +11,7 @@ const zipcode = document.getElementById("zipcode");
 // PAYMENT METHOD
 const cardnumber = document.getElementById("cardnumber");
 const expmth = document.getElementById("exp");
+console.log(expmth.value);
 const cvc = document.getElementById("CVC");
 
 // sub
@@ -68,9 +69,8 @@ function CheckRequired(inputs) {
       errorInput(input, `${input.placeholder}`);
     } else {
       //success Message
-      
+
       successInput(input);
-      popup();
     }
   });
 }
@@ -136,16 +136,66 @@ function checkcvc(input) {
 
 // Popup Buttons
 const submitbtn = document.getElementById("submitbtn");
-const checkOutBtn = document.getElementById("checkOutBtn");
-const popupcloseBtn = document.getElementById("popupconfirmBtn");
+const confirmBtn = document.getElementById("confirmBtn");
+const popupcloseBtn = document.getElementById("popupcloseBtn");
 
 //popupDiv
 const popupdiv = document.getElementById("popupdiv");
 
-function popup() {
-  popupdiv.classList.remove("hidden");
+function inputfield(inputs) {
+  for (const input of inputs) {
+    if (input.value.trim() === "") {
+      return false;
+    }
+  }
+  return true;
 }
+
+submitbtn.addEventListener("click", () => {
+  const rawdata = [
+    username,
+    email,
+    address,
+    city,
+    state,
+    zipcode,
+    cardnumber,
+    expmth,
+    cvc,
+  ];
+
+  if (cardnumber.value.length > 16) {
+    return;
+  } else if (cardnumber.value.length < 16) {
+    return;
+  } else if (cvc.value.length < 3) {
+    return;
+  } else if (cvc.value.length > 3) {
+    return;
+  }
+
+  if (inputfield(rawdata)) {
+    popupdiv.classList.remove("hidden");
+  }
+
+  // display popup Message
+  const preusername = document.getElementById("preusername");
+  const precardnumber = document.getElementById("precardnumber");
+  const precvc = document.getElementById("precvc");
+
+  preusername.textContent = username.value;
+  precardnumber.textContent = cardnumber.value;
+  precvc.textContent = cvc.value;
+});
 
 popupcloseBtn.addEventListener("click", () => {
   popupdiv.classList.add("hidden");
+});
+
+confirmBtn.addEventListener("click", () => {
+  popupdiv.classList.add("hidden");
+
+  setTimeout(() => {
+    alert("Your card Details has success fully submited");
+  },3000);
 });

@@ -181,6 +181,7 @@
         </div>
       </form>
 
+      <!-- Popup -->
       <div
         class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden"
         id="popupdiv"
@@ -190,12 +191,13 @@
             <h3 class="text-2xl font-semibold text-center uppercase ">
               conformation
             </h3>
-            <ul class="grid-rows-4 grid-flow-col place-content-center">
+            <!-- Info Sec-->
+            <div class="grid-rows-4 grid-flow-col place-content-center">
               <div
                 class="mt-2 flex justify-between px-2 py-2 bg-cyan-600 rounded"
               >
                 <label for="preusername" class="font-semibold">Name</label>
-                <li class="" id="preusername" class="border">Abishek</li>
+                <h3 class="" id="preusername" class="border">Abishek</h3>
               </div>
 
               <div
@@ -204,30 +206,21 @@
                 <label for="precardnumber" class="font-semibold"
                   >card Number</label
                 >
-                <li class="" id="precardnumber">123423423</li>
-              </div>
-
-              <div
-                class="mt-2 flex justify-between px-2 py-2 bg-cyan-600 rounded"
-              >
-                <label for="preexpiration" class="font-semibold"
-                  >Expiration Date</label
-                >
-                <li class="" id="preexpiration">11/25</li>
+                <h3 class="" id="precardnumber">123423423</h3>
               </div>
 
               <div
                 class="mt-2 flex justify-between px-2 py-2 bg-cyan-600 rounded"
               >
                 <label for="precvc" class="font-semibold">CVC</label>
-                <li class="" id="precvc">254</li>
+                <h3 class="" id="precvc">254</h3>
               </div>
-            </ul>
+            </div>
 
             <div class="flex justify-between">
               <button
                 type="button"
-                id="popupconfirmBtn"
+                id="popupcloseBtn"
                 class="px-2 py-1 mt-5 rounded bg-red-500 hover:bg-red-700 duration-200 text-white font-semibold"
               >
                 <svg
@@ -247,7 +240,7 @@
               </button>
               <button
                 type="button"
-                id="popupcloseBtn"
+                id="confirmBtn"
                 class="px-2 py-1 mt-5 rounded bg-yellow-300 hover:bg-yellow-500 duration-200 text-black"
               >
                 Confirm
